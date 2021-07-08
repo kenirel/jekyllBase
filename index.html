@@ -1,6 +1,37 @@
 ---
 layout: default
+title: Home Page
+news:
+ -  title: Big Sale
+    description: Exciting things are happening
+    date: 13th Jan
+    category: promo
+    url: https://www.sale.com
+ -  title: New Puppy
+    description: Woof woof woof
+    date: 4th April
+    category: pet care
+    url: https://www.sale.com
+ -  title: Fresh salads
+    description: Free foods to make friends
+    date: 18th Jul
+    category: perks
+    url: https://www.sale.com
 ---
-
-
-page stuff content
+<section class="grid-spaceBetween padded bg-featured latest-news">
+    {% for item in page.news %}
+    <div class="col-4_xs-8">
+        <div class="card">
+            <div class="bg-image">
+                <span> {{item.category}} </span>  
+            </div> 
+            <div class="post-info"> 
+                <p class="date"> {{item.date}} </p> 
+                <h3> {{item.title}} </h3> 
+                <p> {{item.description}} </p> 
+                <a href="{{item.url}}"> Find out more &nbsp; &#10141;</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</section> 
